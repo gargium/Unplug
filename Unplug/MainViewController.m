@@ -31,11 +31,12 @@
     // Do any additional setup after loading the view.
     
     motionManager = [[CMMotionManager alloc] init];
-    motionManager.deviceMotionUpdateInterval = 1.0/100.0;
-    CMDeviceMotion *motion2;
-    yLab.text = [NSString stringWithFormat:@"%f", motion2.userAcceleration.y];
+    motionManager.deviceMotionUpdateInterval = 1.0/30;
     [motionManager startDeviceMotionUpdatesToQueue:[NSOperationQueue currentQueue] withHandler:^(CMDeviceMotion *motion, NSError *error) {
         xLab.text = [NSString stringWithFormat:@"%f",  motion.userAcceleration.x];
+        yLab.text = [NSString stringWithFormat:@"%f", motion.userAcceleration.y];
+        zLab.text = [NSString stringWithFormat:@"%f", motion.userAcceleration.z];
+        
     }];
 }
 

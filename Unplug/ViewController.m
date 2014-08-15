@@ -17,15 +17,17 @@
 @synthesize xAccelBar, yAccelBar, zAccelBar, xAccelLabel, yAccelLabel, zAccelLabel;
 @synthesize xGyroBar, yGyroBar, zGyroBar, xGyroLabel, yGyroLabel,
     zGyroLabel;
-
+@synthesize phoneMovedLabel;
 
 - (void)viewDidLoad
 {
+    
+    phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     
     motionManager = [[CMMotionManager alloc] init];
-    motionManager.accelerometerUpdateInterval = 1.0/10.0; //Update at 10Hz
+    motionManager.accelerometerUpdateInterval = 1.0/30.0; //Update at 10Hz
     
     if (motionManager.accelerometerAvailable) {
         NSLog(@"Accelerometer Available");
@@ -43,10 +45,23 @@
                     zAccelLabel.text = [NSString stringWithFormat:@"%f", acceleration.z];
                     zAccelBar.progress = ABS(acceleration.z);
                     
+                
+                    
+                    if (acceleration.x > .1 && acceleration.x < -.1) {
+                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                    }
+                    if (acceleration.y > .1 && acceleration.y < -.1) {
+                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                    }
+                    if (acceleration.z > .1 && acceleration.z < -.1) {
+                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                    }
+                    
+                    
                 }];
     }
     
-    motionManager.gyroUpdateInterval = 1.0/2.0; //Update every 1.2 seconds
+    motionManager.gyroUpdateInterval = 1.0/30.0; //Update every 1.2 seconds
         
     if(motionManager.gyroAvailable) {
         NSLog(@"Gyro Available");
@@ -66,10 +81,21 @@
                                        rotate.z];
                     zAccelBar.progress = ABS(rotate.z);
                     
+                    if (rotate.x > .1 && rotate.x < -.1) {
+                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                    }
+                    if (rotate.y > .1 && rotate.y < -.1) {
+                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                    }
+                    if (rotate.z > .1 && rotate.z < -.1) {
+                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                    }
+
+                    
                 }];
     }
     
-    motionManager.magnetometerUpdateInterval = 1.0/10.0; //update at 10 hz
+    motionManager.magnetometerUpdateInterval = 1.0/30.0; //update at 10 hz
     if (motionManager.magnetometerAvailable) {
         queue = [NSOperationQueue currentQueue];
         

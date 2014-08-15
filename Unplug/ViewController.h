@@ -37,4 +37,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *zMagnetLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalMagnetLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *phoneMovedLabel;
+
 @end

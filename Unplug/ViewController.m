@@ -6,6 +6,9 @@
 //  Copyright (c) 2014 Gargium Interactive. All rights reserved.
 //
 
+
+// Create a game over method
+
 #import "ViewController.h"
 
 @interface ViewController ()

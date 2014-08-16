@@ -47,11 +47,15 @@
     //for now it should be triggered by default whenever the view is loaded up
     //start up motionmanagers to determine phone's position and whether or not it is being moved
     motionManager = [[CMMotionManager alloc] init];
+    
     motionManager.accelerometerUpdateInterval = 1.0/30.0;
     
     
     __block NSTimer *tUpdate;
-    NSTimeInterval tiCallRate = 1.0/15.0;
+    NSTimeInterval tiCallRate = 1.0/30.0;
+    
+    
+    
 
     if (motionManager.accelerometerAvailable) {
         NSLog(@"Accelerometer is available");
@@ -78,6 +82,7 @@
                                                                                                    delegate:self
                                                                                           cancelButtonTitle:@"Ok"
                                                                                           otherButtonTitles:nil, nil];
+                                                    [alert show];
                                                 }
                                             }];
     }

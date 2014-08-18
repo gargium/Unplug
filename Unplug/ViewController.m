@@ -20,7 +20,18 @@
 @synthesize xAccelBar, yAccelBar, zAccelBar, xAccelLabel, yAccelLabel, zAccelLabel;
 @synthesize xGyroBar, yGyroBar, zGyroBar, xGyroLabel, yGyroLabel,
     zGyroLabel;
-@synthesize phoneMovedLabel;
+@synthesize phoneMovedLabel, scoreLabel1;
+
+- (void) updateScore {
+    
+    scoreNumber = scoreNumber + addedScore;
+    addedScore = addedScore - 1;
+    if (addedScore < 0) {
+        addedScore = 0;
+    }
+    scoreLabel1.text = [NSString stringWithFormat:@"%i", scoreNumber];
+    
+}
 
 - (void)viewDidLoad
 {
@@ -84,15 +95,10 @@
                                        rotate.z];
                     zAccelBar.progress = ABS(rotate.z);
                     
-                    if (rotate.x > .1 || rotate.x < -.1) {
-                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                        [motionManager stopGyroUpdates];
-                    }
-                    if (rotate.y > .1 || rotate.y < -.1) {
-                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                        [motionManager stopGyroUpdates];
-                    }
-                    if (rotate.z > .1 || rotate.z < -.1) {
+                    addedScore = 1;
+                    [self updateScore];
+                    
+                    if (rotate.x > .1 || rotate.x < -.1 || rotate.y > .1 || rotate.y < -.1 || rotate.z > .1 || rotate.z < -.1) {
                         phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
                         [motionManager stopGyroUpdates];
                     }

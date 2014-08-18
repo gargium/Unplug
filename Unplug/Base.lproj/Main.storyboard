@@ -192,6 +192,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qkj-Br-woB">
+                                <rect key="frame" x="39" y="495" width="235" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c3u-gv-zCW">
                                 <rect key="frame" x="219" y="524" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -208,6 +215,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="phoneMovedLabel" destination="wuB-S5-Mi3" id="ruy-xc-fKB"/>
+                        <outlet property="scoreLabel1" destination="Qkj-Br-woB" id="Nbd-xY-BNE"/>
                         <outlet property="totalMagnetLabel" destination="0wd-l7-7Rz" id="OW9-Zj-YsM"/>
                         <outlet property="xAccelBar" destination="E4v-yZ-tQr" id="7t1-T0-1Nm"/>
                         <outlet property="xAccelLabel" destination="jtW-Jd-epy" id="Wat-dV-Q3L"/>

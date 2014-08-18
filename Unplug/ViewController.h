@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 
+float addedScore;
+int scoreNumber;
 
 @interface ViewController : UIViewController {
     
@@ -38,5 +40,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *totalMagnetLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *phoneMovedLabel;
+@property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
+
+-(void) updateScore;
 
 @end

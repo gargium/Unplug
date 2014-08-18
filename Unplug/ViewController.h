@@ -26,5 +26,8 @@ int scoreNumber;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
 
 -(void) updateScore;
+-(void) gameOver;
+-(void) startGame;
+-(void) gameDefaults;
 
 @end

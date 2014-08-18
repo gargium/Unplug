@@ -29,12 +29,13 @@
     if (addedScore < 0) {
         addedScore = 0;
     }
-    scoreLabel1.text = [NSString stringWithFormat:@"%i", scoreNumber];
+    scoreLabel1.text = [NSString stringWithFormat:@"%i", scoreNumber/30];
     
 }
 
 - (void)viewDidLoad
 {
+    scoreNumber = 0;
     
     phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
     [super viewDidLoad];

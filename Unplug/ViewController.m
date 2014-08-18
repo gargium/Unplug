@@ -17,8 +17,7 @@
 
 
 @implementation ViewController
-@synthesize xGyroBar, yGyroBar, zGyroBar, xGyroLabel, yGyroLabel,
-    zGyroLabel;
+@synthesize xGyroLabel, yGyroLabel, zGyroLabel;
 @synthesize phoneMovedLabel, scoreLabel1;
 
 - (void) updateScore {
@@ -38,6 +37,7 @@
     
     phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
     [super viewDidLoad];
+    
 	// Do any additional setup after loading the view, typically from a nib.
     
     motionManager = [[CMMotionManager alloc] init];

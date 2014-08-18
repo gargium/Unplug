@@ -49,16 +49,16 @@
                     zAccelBar.progress = ABS(acceleration.z);
                     
                 
-                    
-                    if (acceleration.x > .1 && acceleration.x < -.1) {
-                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                    }
-                    if (acceleration.y > .1 && acceleration.y < -.1) {
-                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                    }
-                    if (acceleration.z > .1 && acceleration.z < -.1) {
-                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                    }
+//                    
+//                    if (acceleration.x > .1 && acceleration.x < -.1) {
+//                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+//                    }
+//                    if (acceleration.y > .1 && acceleration.y < -.1) {
+//                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+//                    }
+//                    if (acceleration.z > .1 && acceleration.z < -.1) {
+//                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+//                    }
                     
                     
                 }];
@@ -84,14 +84,17 @@
                                        rotate.z];
                     zAccelBar.progress = ABS(rotate.z);
                     
-                    if (rotate.x > .1 && rotate.x < -.1) {
+                    if (rotate.x > .1 || rotate.x < -.1) {
                         phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                        [motionManager stopGyroUpdates];
                     }
-                    if (rotate.y > .1 && rotate.y < -.1) {
+                    if (rotate.y > .1 || rotate.y < -.1) {
                         phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                        [motionManager stopGyroUpdates];
                     }
-                    if (rotate.z > .1 && rotate.z < -.1) {
+                    if (rotate.z > .1 || rotate.z < -.1) {
                         phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                        [motionManager stopGyroUpdates];
                     }
 
                     

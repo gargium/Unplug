@@ -9,6 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <CoreMotion/CoreMotion.h>
 
+int addedScore;
+int scoreNumber;
+
 @interface GameViewController : UIViewController {
     
     CMMotionManager *motionManager;
@@ -17,6 +20,7 @@
 }
 
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (weak, nonatomic) IBOutlet UILabel *alertLabel;
 
 -(void)updateScore;
 

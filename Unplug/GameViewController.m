@@ -15,16 +15,17 @@
 
 @implementation GameViewController
 
-@synthesize scoreLabel;
+@synthesize scoreLabel, alertLabel;
 
 - (void) updateScore {
     
-    int addToScore = 1;
-    int currentScore = 0;
-    if (addToScore > 0) {
-        currentScore++;
-        scoreLabel.text = [NSString stringWithFormat:@"%i", currentScore];
+    scoreNumber = scoreNumber + addedScore;
+    addedScore = addedScore - 1;
+    if (addedScore < 0) {
+        addedScore = 0;
     }
+    scoreLabel.text = [NSString stringWithFormat:@"%i", scoreNumber];
+
     
     
 }
@@ -47,42 +48,47 @@
     //for now it should be triggered by default whenever the view is loaded up
     //start up motionmanagers to determine phone's position and whether or not it is being moved
     motionManager = [[CMMotionManager alloc] init];
-    
-    motionManager.accelerometerUpdateInterval = 1.0/30.0;
+    motionManager.gyroUpdateInterval = 1.0/30.0;
     
     
     __block NSTimer *tUpdate;
     NSTimeInterval tiCallRate = 1.0/30.0;
     
     
-    
-
-    if (motionManager.accelerometerAvailable) {
-        NSLog(@"Accelerometer is available");
+    if (motionManager.gyroAvailable) {
+        NSLog(@"Gyro is Available");
         q = [NSOperationQueue currentQueue];
         
-        [motionManager startAccelerometerUpdatesToQueue:q
-                                            withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-                                                CMAcceleration acceleration = accelerometerData.acceleration;
-                                                if (acceleration.x < .1 && acceleration.x > -.1 &&
-                                                    acceleration.y < .1 && acceleration.y > -.1 &&
-                                                    acceleration.z < .1 && acceleration.z > -.1) {
+        [motionManager startGyroUpdatesToQueue:q
+                                   withHandler:^(CMGyroData *gyroData, NSError *error) {
+                                       CMRotationRate rotate = gyroData.rotationRate;
+                                                if (rotate.x < .1 || rotate.x > -.1 ||
+                                                    rotate.y < .1 || rotate.y > -.1 ||
+                                                    rotate.z < .1 || rotate.z > -.1) {
                                                     
                                                     tUpdate = [NSTimer scheduledTimerWithTimeInterval:tiCallRate
                                                                                                target:self
-                                                                                             selector:@selector(updateScore:)
+                                                                                             selector:@selector(updateScore)
                                                                                              userInfo:nil
                                                                                               repeats:YES];
+                                                    
+                                                    [motionManager stopGyroUpdates];
+                                                    
+                                                    alertLabel.text = [NSString stringWithFormat:@"Dont touch the phone!"];
                                                     
                                                 }
                                                 
                                                 else {
-                                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Game Over!"
-                                                                                                    message:@"You moved the phone!"
-                                                                                                   delegate:self
-                                                                                          cancelButtonTitle:@"Ok"
-                                                                                          otherButtonTitles:nil, nil];
-                                                    [alert show];
+//                                                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Game Over!"
+//                                                                                                    message:@"You moved the phone!"
+//                                                                                                   delegate:self
+//                                                                                          cancelButtonTitle:@"Ok"
+//                                                                                          otherButtonTitles:nil, nil];
+//                                                    [alert show];
+                                                    
+                                                    alertLabel.text = [NSString stringWithFormat:@"oops! you moved the phone!"];
+                                                    
+                                                    
                                                 }
                                             }];
     }

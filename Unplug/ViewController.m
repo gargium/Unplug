@@ -17,7 +17,6 @@
 
 
 @implementation ViewController
-@synthesize xAccelBar, yAccelBar, zAccelBar, xAccelLabel, yAccelLabel, zAccelLabel;
 @synthesize xGyroBar, yGyroBar, zGyroBar, xGyroLabel, yGyroLabel,
     zGyroLabel;
 @synthesize phoneMovedLabel, scoreLabel1;
@@ -44,38 +43,6 @@
     motionManager = [[CMMotionManager alloc] init];
     motionManager.accelerometerUpdateInterval = 1.0/30.0; //Update at 10Hz
     
-    if (motionManager.accelerometerAvailable) {
-        NSLog(@"Accelerometer Available");
-        queue = [NSOperationQueue currentQueue];
-        
-        [motionManager startAccelerometerUpdatesToQueue:queue
-                withHandler:^(CMAccelerometerData *accelerometerData, NSError *error) {
-                    CMAcceleration acceleration = accelerometerData.acceleration;
-                    xAccelLabel.text = [NSString stringWithFormat:@"%f", acceleration.x];
-                    xAccelBar.progress = ABS(acceleration.x);
-                    
-                    yAccelLabel.text = [NSString stringWithFormat:@"%f", acceleration.y];
-                    yAccelBar.progress = ABS(acceleration.y);
-                    
-                    zAccelLabel.text = [NSString stringWithFormat:@"%f", acceleration.z];
-                    zAccelBar.progress = ABS(acceleration.z);
-                    
-                
-//                    
-//                    if (acceleration.x > .1 && acceleration.x < -.1) {
-//                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-//                    }
-//                    if (acceleration.y > .1 && acceleration.y < -.1) {
-//                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-//                    }
-//                    if (acceleration.z > .1 && acceleration.z < -.1) {
-//                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-//                    }
-                    
-                    
-                }];
-    }
-    
     motionManager.gyroUpdateInterval = 1.0/30.0; //Update every 1.2 seconds
         
     if(motionManager.gyroAvailable) {
@@ -86,15 +53,12 @@
                 withHandler:^(CMGyroData *gyroData, NSError *error) {
                     CMRotationRate rotate = gyroData.rotationRate;
                     xGyroLabel.text = [NSString stringWithFormat:@"%f",rotate.x];
-                    xAccelBar.progress = ABS(rotate.x);
                     
                     yGyroLabel.text = [NSString stringWithFormat:@"%f",
                                        rotate.y];
-                    yAccelBar.progress = ABS(rotate.y);
                     
                     zGyroLabel.text = [NSString stringWithFormat:@"%f",
                                        rotate.z];
-                    zAccelBar.progress = ABS(rotate.z);
                     
                     addedScore = 1;
                     [self updateScore];
@@ -106,20 +70,6 @@
 
                     
                 }];
-    }
-    
-    motionManager.magnetometerUpdateInterval = 1.0/30.0; //update at 10 hz
-    if (motionManager.magnetometerAvailable) {
-        queue = [NSOperationQueue currentQueue];
-        
-        [motionManager startMagnetometerUpdatesToQueue:queue withHandler:^(CMMagnetometerData *magnetometerData, NSError *error) {
-            
-            CMMagneticField field = magnetometerData.magneticField;
-            self.xMagnetLabel.text = [NSString stringWithFormat:@"%f", field.x];
-            self.yMagnetLabel.text = [NSString stringWithFormat:@"%f", field.y];
-            self.zMagnetLabel.text = [NSString stringWithFormat:@"%f", field.z];
-            self.totalMagnetLabel.text = [NSString stringWithFormat:@"%f", sqrt(field.x * field.x + field.y * field.y + field.z * field.z)];
-        }];
     }
 }
 

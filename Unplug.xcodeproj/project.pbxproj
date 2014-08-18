@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9E3BFFF7199EABED001D8BBE /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3BFFF6199EABED001D8BBE /* GameViewController.m */; };
 		9EE52385199A9FAF00D5276C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52384199A9FAF00D5276C /* Foundation.framework */; };
 		9EE52387199A9FAF00D5276C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52386199A9FAF00D5276C /* CoreGraphics.framework */; };
 		9EE52389199A9FAF00D5276C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52388199A9FAF00D5276C /* UIKit.framework */; };
@@ -36,8 +35,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9E3BFFF5199EABED001D8BBE /* GameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
-		9E3BFFF6199EABED001D8BBE /* GameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		9EE52381199A9FAF00D5276C /* Unplug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unplug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE52384199A9FAF00D5276C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9EE52386199A9FAF00D5276C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -122,8 +119,6 @@
 				9EE52393199A9FAF00D5276C /* AppDelegate.h */,
 				9EE52394199A9FAF00D5276C /* AppDelegate.m */,
 				9EE52396199A9FAF00D5276C /* Main.storyboard */,
-				9E3BFFF5199EABED001D8BBE /* GameViewController.h */,
-				9E3BFFF6199EABED001D8BBE /* GameViewController.m */,
 				9EE52399199A9FAF00D5276C /* ViewController.h */,
 				9EE5239A199A9FAF00D5276C /* ViewController.m */,
 				9EE5239C199A9FAF00D5276C /* Images.xcassets */,
@@ -258,7 +253,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E3BFFF7199EABED001D8BBE /* GameViewController.m in Sources */,
 				9EE5239B199A9FAF00D5276C /* ViewController.m in Sources */,
 				9EE52395199A9FAF00D5276C /* AppDelegate.m in Sources */,
 				9EE52391199A9FAF00D5276C /* main.m in Sources */,

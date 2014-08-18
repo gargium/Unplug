@@ -22,7 +22,6 @@ int scoreNumber;
 @property (weak, nonatomic) IBOutlet UILabel *xGyroLabel;
 @property (weak, nonatomic) IBOutlet UILabel *yGyroLabel;
 @property (weak, nonatomic) IBOutlet UILabel *zGyroLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *phoneMovedLabel;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
 

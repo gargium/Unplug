@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E3B000019A1B205001D8BBE /* mediumButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFC19A1B205001D8BBE /* mediumButton.png */; };
+		9E3B000119A1B205001D8BBE /* easyButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */; };
+		9E3B000219A1B205001D8BBE /* easyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFE19A1B205001D8BBE /* easyButton.png */; };
+		9E3B000519A1B400001D8BBE /* hardButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B000319A1B400001D8BBE /* hardButtonPressed.png */; };
+		9E3B000619A1B400001D8BBE /* hardButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B000419A1B400001D8BBE /* hardButton.png */; };
+		9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */; };
 		9EE52385199A9FAF00D5276C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52384199A9FAF00D5276C /* Foundation.framework */; };
 		9EE52387199A9FAF00D5276C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52386199A9FAF00D5276C /* CoreGraphics.framework */; };
 		9EE52389199A9FAF00D5276C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52388199A9FAF00D5276C /* UIKit.framework */; };
@@ -35,6 +41,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E3B000319A1B400001D8BBE /* hardButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hardButtonPressed.png; path = ../hardButtonPressed.png; sourceTree = "<group>"; };
+		9E3B000419A1B400001D8BBE /* hardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hardButton.png; path = ../hardButton.png; sourceTree = "<group>"; };
+		9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButtonPressed.png; path = ../mediumButtonPressed.png; sourceTree = "<group>"; };
+		9E3BFFFC19A1B205001D8BBE /* mediumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButton.png; path = ../mediumButton.png; sourceTree = "<group>"; };
+		9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easyButtonPressed.png; path = ../easyButtonPressed.png; sourceTree = "<group>"; };
+		9E3BFFFE19A1B205001D8BBE /* easyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easyButton.png; path = ../easyButton.png; sourceTree = "<group>"; };
 		9EE52381199A9FAF00D5276C /* Unplug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unplug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE52384199A9FAF00D5276C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		9EE52386199A9FAF00D5276C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -130,6 +142,12 @@
 		9EE5238B199A9FAF00D5276C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E3B000319A1B400001D8BBE /* hardButtonPressed.png */,
+				9E3B000419A1B400001D8BBE /* hardButton.png */,
+				9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */,
+				9E3BFFFC19A1B205001D8BBE /* mediumButton.png */,
+				9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */,
+				9E3BFFFE19A1B205001D8BBE /* easyButton.png */,
 				9EE5238C199A9FAF00D5276C /* Unplug-Info.plist */,
 				9EE5238D199A9FAF00D5276C /* InfoPlist.strings */,
 				9EE52390199A9FAF00D5276C /* main.m */,
@@ -233,8 +251,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				9EE5239D199A9FAF00D5276C /* Images.xcassets in Resources */,
+				9E3B000519A1B400001D8BBE /* hardButtonPressed.png in Resources */,
+				9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */,
+				9E3B000619A1B400001D8BBE /* hardButton.png in Resources */,
+				9E3B000119A1B205001D8BBE /* easyButtonPressed.png in Resources */,
 				9EE5238F199A9FAF00D5276C /* InfoPlist.strings in Resources */,
+				9E3B000219A1B205001D8BBE /* easyButton.png in Resources */,
 				9EE52398199A9FAF00D5276C /* Main.storyboard in Resources */,
+				9E3B000019A1B205001D8BBE /* mediumButton.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

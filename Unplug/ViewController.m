@@ -63,9 +63,11 @@
                     addedScore = 1;
                     [self updateScore];
                     
-                    if (rotate.x > .1 || rotate.x < -.1 || rotate.y > .1 || rotate.y < -.1 || rotate.z > .1 || rotate.z < -.1) {
-                        phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                        [motionManager stopGyroUpdates];
+                    if (rotate.x > .1 || rotate.x < -.1 ||
+                        rotate.y > .1 || rotate.y < -.1 ||
+                        rotate.z > .1 || rotate.z < -.1) {
+                            phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                            [motionManager stopGyroUpdates];
                     }
 
                     

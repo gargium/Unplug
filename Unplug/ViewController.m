@@ -18,9 +18,80 @@
 
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
-@synthesize phoneMovedLabel, scoreLabel1;
+@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton;
 
+- (IBAction)restartGameButton:(id)sender {
+    
+    [self gameDefaults];
+    [self startGame];
+}
+
+- (IBAction)postToTwitter:(id)sender {
+    
+    //  Checking if Twitter account is available on device
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
+        
+        mySLComposerSheet = [[SLComposeViewController alloc] init]; // Initiate Social Controller
+        mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter]; //Specify that we want Twitter,
+        //  not an alternate Social Network
+        
+        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"I just scored %i points and lasted %i seconds before touching or moving my iDevice!" , adjustedScore, timeElapsed, mySLComposerSheet.serviceType]]; //Default text that will show up in the box
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    
+    [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSString *output;
+        
+        //  BASIC ERROR MANAGEMENT:
+        //  Returns a popup alert notifying the user whether the post was successful or if the action was cancelled
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successful";
+            default:
+                break;
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Twitter" message:output delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }];
+
+}
+
+- (IBAction)postToFacebook:(id)sender {
+    
+    if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
+        mySLComposerSheet = [[SLComposeViewController alloc] init];
+        mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"I just scored %i points and lasted %i seconds before touching or moving my iDevice!" , adjustedScore, timeElapsed, mySLComposerSheet.serviceType]];
+        [self presentViewController:mySLComposerSheet animated:YES completion:nil];
+    }
+    
+    [mySLComposerSheet setCompletionHandler:^(SLComposeViewControllerResult result) {
+        NSString *output;
+        switch (result) {
+            case SLComposeViewControllerResultCancelled:
+                output = @"Action Cancelled";
+                break;
+            case SLComposeViewControllerResultDone:
+                output = @"Post Successful";
+            default:
+                break;
+        }
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Facebook" message:output delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+    }];
+
+}
 - (void) gameOver {
+    
+    restartGameButton.hidden = NO;
+    twitterButton.hidden = NO;
+    fbButton.hidden = NO;
     
 }
 
@@ -65,12 +136,17 @@
     if (addedScore < 0) {
         addedScore = 0;
     }
-    scoreLabel1.text = [NSString stringWithFormat:@"%i", scoreNumber/10];
+    adjustedScore = scoreNumber / 7;
+    scoreLabel1.text = [NSString stringWithFormat:@"%i", adjustedScore];
     
 }
 
 - (void) gameDefaults {
     
+    
+    restartGameButton.hidden = YES;
+    twitterButton.hidden = YES;
+    fbButton.hidden = YES;
     scoreNumber = 0;
     phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
     

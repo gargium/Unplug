@@ -14,7 +14,6 @@ int addedScore;
 int scoreNumber;
 int adjustedScore;
 int timeElapsed;
-NSString reasonforGameOver;
 
 @interface ViewController : UIViewController {
     
@@ -35,6 +34,7 @@ NSString reasonforGameOver;
 @property (weak, nonatomic) IBOutlet UIButton *fbButton;
 @property (weak, nonatomic) IBOutlet UILabel *rememberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dontTouchLabel;
+@property (weak, nonatomic) NSString *reasonForGameOver;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) updateScore;
@@ -44,5 +44,6 @@ NSString reasonforGameOver;
 - (IBAction)restartGameButton:(id)sender;
 - (IBAction)postToTwitter:(id)sender;
 - (IBAction)postToFacebook:(id)sender;
+-(BOOL) prefersStatusBarHidden;
 
 @end

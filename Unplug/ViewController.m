@@ -17,6 +17,7 @@
 //- Implement a help button ^^
 //- Implement sensitivity levels ? (iffy on this one)
 //- Add the start buttons on the first view in the storyboard to the intro slideshow views on first launch, and then display the start game button only on subsequent launches
+//- Add the prefersStatusBarHidden method to all view controllers
 
 
 #import "ViewController.h"
@@ -28,12 +29,17 @@
 
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
-@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel;
+@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver;
+
+-(BOOL) prefersStatusBarHidden {
+    
+    return YES;
+}
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     phoneMovedLabel.text = @"you moved the phone!";
-    reasonforGameOver = @"iDevice has been moved!";
+    reasonForGameOver = @"iDevice has been touched!";
     [self gameOver];
     
 }
@@ -112,7 +118,7 @@
     restartGameButton.hidden = NO;
     twitterButton.hidden = NO;
     fbButton.hidden = NO;
-    UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:reasonforGameOver delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:reasonForGameOver delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
     [gameOverAlert show];
     [motionManager stopGyroUpdates];
 }
@@ -144,7 +150,7 @@
                                            rotate.y > .1 || rotate.y < -.1 ||
                                            rotate.z > .1 || rotate.z < -.1) {
                                            phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                                           reasonforGameOver = @"iDevice has been moved!";
+                                           reasonForGameOver = @"iDevice has been moved!";
                                            [self gameOver];
                                        }
                                    }];
@@ -158,7 +164,7 @@
     if (addedScore < 0) {
         addedScore = 0;
     }
-    adjustedScore = scoreNumber / 7;
+    adjustedScore = scoreNumber / M_PI;
     scoreLabel1.text = [NSString stringWithFormat:@"%i", adjustedScore];
     
 }
@@ -170,7 +176,7 @@
     restartGameButton.hidden = YES;
     twitterButton.hidden = YES;
     fbButton.hidden = YES;
-    adjustedScore = 0;
+    scoreNumber = 0;
     phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
     UIImage *backgroundImageGold = [UIImage imageNamed:@"unplugBG1.png"];
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];

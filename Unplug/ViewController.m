@@ -7,7 +7,6 @@
 //
 
 
-// Create a game over method
 
 #import "ViewController.h"
 
@@ -18,11 +17,12 @@
 
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
-@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton;
+@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel;
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
     phoneMovedLabel.text = @"you moved the phone!";
+    reasonforGameOver = @"iDevice has been moved!";
     [self gameOver];
     
 }
@@ -96,9 +96,13 @@
 }
 - (void) gameOver {
     
+    rememberLabel.hidden = YES;
+    dontTouchLabel.hidden = YES;
     restartGameButton.hidden = NO;
     twitterButton.hidden = NO;
     fbButton.hidden = NO;
+    UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:reasonforGameOver delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+    [gameOverAlert show];
     [motionManager stopGyroUpdates];
 }
 
@@ -129,6 +133,7 @@
                                            rotate.y > .1 || rotate.y < -.1 ||
                                            rotate.z > .1 || rotate.z < -.1) {
                                            phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                                           reasonforGameOver = @"iDevice has been moved!";
                                            [self gameOver];
                                        }
                                    }];
@@ -149,11 +154,12 @@
 
 - (void) gameDefaults {
     
-    
+    rememberLabel.hidden = NO;
+    dontTouchLabel.hidden = NO;
     restartGameButton.hidden = YES;
     twitterButton.hidden = YES;
     fbButton.hidden = YES;
-    scoreNumber = 0;
+    adjustedScore = 0;
     phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
     UIImage *backgroundImageGold = [UIImage imageNamed:@"unplugBG1.png"];
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];

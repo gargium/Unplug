@@ -14,6 +14,7 @@ int addedScore;
 int scoreNumber;
 int adjustedScore;
 int timeElapsed;
+NSString reasonforGameOver;
 
 @interface ViewController : UIViewController {
     
@@ -32,6 +33,8 @@ int timeElapsed;
 @property (weak, nonatomic) IBOutlet UIButton *restartGameButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 @property (weak, nonatomic) IBOutlet UIButton *fbButton;
+@property (weak, nonatomic) IBOutlet UILabel *rememberLabel;
+@property (weak, nonatomic) IBOutlet UILabel *dontTouchLabel;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) updateScore;

@@ -7,6 +7,17 @@
 //
 
 
+//TODO LIST:
+//- Add a timer
+//- Add artwork for each view
+//- Create one of those intro slideshow sequences
+//- High score storage
+//- Implement a way for the system to remember to only display the intro slideshow on the first launch
+//- Implement a way for the system to show the whole slideshow all over again if the user presses the help button
+//- Implement a help button ^^
+//- Implement sensitivity levels ? (iffy on this one)
+//- Add the start buttons on the first view in the storyboard to the intro slideshow views on first launch, and then display the start game button only on subsequent launches
+
 
 #import "ViewController.h"
 

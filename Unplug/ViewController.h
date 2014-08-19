@@ -33,6 +33,7 @@ int timeElapsed;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 @property (weak, nonatomic) IBOutlet UIButton *fbButton;
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) updateScore;
 -(void) gameOver;
 -(void) startGame;

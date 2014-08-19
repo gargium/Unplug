@@ -88,7 +88,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="hardButtonPressed.png"/>
                                 <connections>
-                                    <action selector="postToFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="8wq-BZ-nzs"/>
+                                    <action selector="postToFacebook:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="cSx-tR-bl6"/>
                                     <action selector="restartGameButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="uNa-s0-5up"/>
                                 </connections>
                             </button>
@@ -102,7 +102,7 @@
                                 </state>
                                 <state key="highlighted" backgroundImage="hardButtonPressed.png"/>
                                 <connections>
-                                    <action selector="postToTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="VZX-Cq-Juq"/>
+                                    <action selector="postToTwitter:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="3Pv-rk-xrl"/>
                                     <action selector="restartGameButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="LuA-xo-GTi"/>
                                 </connections>
                             </button>
@@ -118,9 +118,10 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="fbButton" destination="1IL-Dz-FUe" id="C9s-zD-WR6"/>
                         <outlet property="restartGameButton" destination="KNM-LG-gob" id="1yP-Sa-QDK"/>
-                        <outlet property="restartGamebutton" destination="KNM-LG-gob" id="rWF-qc-Q4B"/>
                         <outlet property="scoreLabel1" destination="Qkj-Br-woB" id="Nbd-xY-BNE"/>
+                        <outlet property="twitterButton" destination="kIw-6i-Zit" id="V9W-JL-fFA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

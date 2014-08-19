@@ -20,6 +20,13 @@
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
 @synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton;
 
+-(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    phoneMovedLabel.text = @"you moved the phone!";
+    [self gameOver];
+    
+}
+
 - (IBAction)restartGameButton:(id)sender {
     
     [self gameDefaults];
@@ -92,7 +99,7 @@
     restartGameButton.hidden = NO;
     twitterButton.hidden = NO;
     fbButton.hidden = NO;
-    
+    [motionManager stopGyroUpdates];
 }
 
 - (void) startGame {
@@ -122,7 +129,6 @@
                                            rotate.y > .1 || rotate.y < -.1 ||
                                            rotate.z > .1 || rotate.z < -.1) {
                                            phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
-                                           [motionManager stopGyroUpdates];
                                            [self gameOver];
                                        }
                                    }];
@@ -149,6 +155,10 @@
     fbButton.hidden = YES;
     scoreNumber = 0;
     phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
+    UIImage *backgroundImageGold = [UIImage imageNamed:@"unplugBG1.png"];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
+    backgroundImageView.image = backgroundImageGold;
+    [self.view insertSubview:backgroundImageView atIndex:0];
     
 }
 

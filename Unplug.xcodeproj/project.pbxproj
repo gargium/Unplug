@@ -17,6 +17,7 @@
 		9E3B000D19A2DC15001D8BBE /* Facebook_Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B000B19A2DC15001D8BBE /* Facebook_Logo.png */; };
 		9E3B000E19A2DC15001D8BBE /* twitterlogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B000C19A2DC15001D8BBE /* twitterlogo.png */; };
 		9E3B001019A2DC2E001D8BBE /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3B000F19A2DC2E001D8BBE /* Social.framework */; };
+		9E3B001219A2E750001D8BBE /* unplugBG1.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B001119A2E750001D8BBE /* unplugBG1.png */; };
 		9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */; };
 		9EE52385199A9FAF00D5276C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52384199A9FAF00D5276C /* Foundation.framework */; };
 		9EE52387199A9FAF00D5276C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52386199A9FAF00D5276C /* CoreGraphics.framework */; };
@@ -53,6 +54,7 @@
 		9E3B000B19A2DC15001D8BBE /* Facebook_Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Facebook_Logo.png; path = ../Facebook_Logo.png; sourceTree = "<group>"; };
 		9E3B000C19A2DC15001D8BBE /* twitterlogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = twitterlogo.png; path = ../twitterlogo.png; sourceTree = "<group>"; };
 		9E3B000F19A2DC2E001D8BBE /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		9E3B001119A2E750001D8BBE /* unplugBG1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = unplugBG1.png; path = ../unplugBG1.png; sourceTree = "<group>"; };
 		9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButtonPressed.png; path = ../mediumButtonPressed.png; sourceTree = "<group>"; };
 		9E3BFFFC19A1B205001D8BBE /* mediumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButton.png; path = ../mediumButton.png; sourceTree = "<group>"; };
 		9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easyButtonPressed.png; path = ../easyButtonPressed.png; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 		9EE5238B199A9FAF00D5276C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9E3B001119A2E750001D8BBE /* unplugBG1.png */,
 				9E3B000B19A2DC15001D8BBE /* Facebook_Logo.png */,
 				9E3B000C19A2DC15001D8BBE /* twitterlogo.png */,
 				9E3B000719A2D8D2001D8BBE /* restartButtonPressed.png */,
@@ -277,6 +280,7 @@
 				9EE5238F199A9FAF00D5276C /* InfoPlist.strings in Resources */,
 				9E3B000A19A2D8D2001D8BBE /* restartButton.png in Resources */,
 				9E3B000219A1B205001D8BBE /* easyButton.png in Resources */,
+				9E3B001219A2E750001D8BBE /* unplugBG1.png in Resources */,
 				9EE52398199A9FAF00D5276C /* Main.storyboard in Resources */,
 				9E3B000019A1B205001D8BBE /* mediumButton.png in Resources */,
 			);

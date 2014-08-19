@@ -8,7 +8,7 @@
 
 
 //TODO LIST:
-//- Add a timer
+//- Change the social update presets to reflect formatting of time (use the %02d settings found in the code)
 //- Add artwork for each view
 //- Create one of those intro slideshow sequences
 //- High score storage
@@ -21,6 +21,7 @@
 
 
 #import "ViewController.h"
+#import "Foundation/Foundation.h"
 
 @interface ViewController ()
 
@@ -29,7 +30,35 @@
 
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
-@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver;
+@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver, stopwatchLabel, secondsLabel;
+
+- (NSTimer *)createTimer {
+    return [NSTimer scheduledTimerWithTimeInterval:1.0
+                                            target:self
+                                          selector:@selector(timerTicked:)
+                                          userInfo:nil
+                                           repeats:YES];
+}
+
+- (void)timerTicked:(NSTimer *)timer {
+    
+    _elapsedTime++;
+    self.stopwatchLabel.text = [self formattedTime:_elapsedTime];
+    
+    
+}
+
+- (NSString *)formattedTime:(int)totalSeconds
+{
+    
+    int seconds = totalSeconds % 60;
+    int minutes = (totalSeconds / 60) % 60;
+    int hours = totalSeconds / 3600;
+    
+    return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
+
+
+}
 
 -(BOOL) prefersStatusBarHidden {
     
@@ -45,6 +74,14 @@
 }
 
 - (IBAction)restartGameButton:(id)sender {
+    
+    if (_myTimer) {
+        [_myTimer invalidate];
+        _myTimer = [self createTimer];
+    }
+    
+    _elapsedTime = 0;
+    self.stopwatchLabel.text = [self formattedTime:_elapsedTime];
     
     [self gameDefaults];
     [self startGame];
@@ -113,6 +150,7 @@
 }
 - (void) gameOver {
     
+    [_myTimer invalidate];
     rememberLabel.hidden = YES;
     dontTouchLabel.hidden = YES;
     restartGameButton.hidden = NO;
@@ -124,6 +162,16 @@
 }
 
 - (void) startGame {
+    
+    if (!_elapsedTime) {
+        _elapsedTime = 0 ;
+    }
+    
+    if (!_myTimer) {
+        _myTimer = [self createTimer];
+    }
+    
+
     
     motionManager = [[CMMotionManager alloc] init];
     motionManager.gyroUpdateInterval = 1.0/30.0; //Update at 30hz
@@ -143,9 +191,20 @@
                                        zGyroLabel.text = [NSString stringWithFormat:@"%f",
                                                           rotate.z];
                                        
+                                       if (_elapsedTime > 3599) {
+                                           self.secondsLabel.text = @"hours";
+                                       }
+                                       else if (_elapsedTime > 59) {
+                                           self.secondsLabel.text = @"minutes";
+                                       }
+                                       else {
+                                           self.secondsLabel.text = @"seconds";
+                                       }
+                                       
                                        addedScore = 1;
                                        [self updateScore];
                                        
+
                                        if (rotate.x > .1 || rotate.x < -.1 ||
                                            rotate.y > .1 || rotate.y < -.1 ||
                                            rotate.z > .1 || rotate.z < -.1) {
@@ -154,6 +213,7 @@
                                            [self gameOver];
                                        }
                                    }];
+        
     }
 }
 
@@ -171,6 +231,7 @@
 
 - (void) gameDefaults {
     
+    secondsLabel.text = @"seconds";
     rememberLabel.hidden = NO;
     dontTouchLabel.hidden = NO;
     restartGameButton.hidden = YES;

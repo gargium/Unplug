@@ -35,12 +35,18 @@ int timeElapsed;
 @property (weak, nonatomic) IBOutlet UILabel *rememberLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dontTouchLabel;
 @property (weak, nonatomic) NSString *reasonForGameOver;
+@property (weak, nonatomic) IBOutlet UILabel *stopwatchLabel;
+@property (weak, nonatomic) NSTimer *myTimer;
+@property int elapsedTime;
+@property (weak, nonatomic) IBOutlet UILabel *secondsLabel;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) updateScore;
 -(void) gameOver;
 -(void) startGame;
 -(void) gameDefaults;
+
+
 - (IBAction)restartGameButton:(id)sender;
 - (IBAction)postToTwitter:(id)sender;
 - (IBAction)postToFacebook:(id)sender;

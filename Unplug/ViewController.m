@@ -8,7 +8,6 @@
 
 
 //TODO LIST:
-//- High score storage
 //- Implement a way for the system to remember to only display the intro slideshow on the first launch
 
 

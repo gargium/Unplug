@@ -30,7 +30,7 @@
 
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
-@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver, stopwatchLabel, secondsLabel;
+@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver, stopwatchLabel, secondsLabel, gameOverLabel, reasonForGameOverLabel;
 
 - (NSTimer *)createTimer {
     return [NSTimer scheduledTimerWithTimeInterval:1.0
@@ -67,7 +67,7 @@
 
 -(void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
     
-    phoneMovedLabel.text = @"you moved the phone!";
+    reasonForGameOverLabel.text = @"You touched your device!";
     reasonForGameOver = @"iDevice has been touched!";
     [self gameOver];
     
@@ -151,13 +151,16 @@
 - (void) gameOver {
     
     [_myTimer invalidate];
+    
+    gameOverLabel.hidden = NO;
+    reasonForGameOverLabel.hidden = NO;
     rememberLabel.hidden = YES;
     dontTouchLabel.hidden = YES;
     restartGameButton.hidden = NO;
     twitterButton.hidden = NO;
     fbButton.hidden = NO;
-    UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:reasonForGameOver delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
-    [gameOverAlert show];
+//    UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:reasonForGameOver delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
+//    [gameOverAlert show];
     [motionManager stopGyroUpdates];
 }
 
@@ -208,7 +211,7 @@
                                        if (rotate.x > .1 || rotate.x < -.1 ||
                                            rotate.y > .1 || rotate.y < -.1 ||
                                            rotate.z > .1 || rotate.z < -.1) {
-                                           phoneMovedLabel.text = [NSString stringWithFormat:@"Phone moved!"];
+                                           reasonForGameOverLabel.text = [NSString stringWithFormat:@"iDevice has been moved!"];
                                            reasonForGameOver = @"iDevice has been moved!";
                                            [self gameOver];
                                        }
@@ -231,6 +234,8 @@
 
 - (void) gameDefaults {
     
+    gameOverLabel.hidden = YES;
+    reasonForGameOverLabel.hidden = YES;
     secondsLabel.text = @"seconds";
     rememberLabel.hidden = NO;
     dontTouchLabel.hidden = NO;
@@ -248,6 +253,12 @@
 
 - (void)viewDidLoad
 {
+    UIAlertView *reminder = [[UIAlertView alloc] initWithTitle:@"Remember:"
+                                                       message:@"Don't touch or move your device!"
+                                                      delegate:nil
+                                             cancelButtonTitle:@"Got it"
+                                             otherButtonTitles:nil];
+    [reminder show]; 
     [super viewDidLoad];
     [self gameDefaults];
     [self startGame];

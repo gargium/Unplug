@@ -118,6 +118,20 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME OVER! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-tx-m61">
+                                <rect key="frame" x="0.0" y="177" width="320" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reason for game over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKr-V9-tLX">
+                                <rect key="frame" x="0.0" y="205" width="320" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
+                                <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -133,6 +147,8 @@
                     <connections>
                         <outlet property="dontTouchLabel" destination="JYQ-hY-u1I" id="yRs-cU-LdY"/>
                         <outlet property="fbButton" destination="1IL-Dz-FUe" id="C9s-zD-WR6"/>
+                        <outlet property="gameOverLabel" destination="9QS-tx-m61" id="QVY-yJ-mch"/>
+                        <outlet property="reasonForGameOverLabel" destination="rKr-V9-tLX" id="9lh-dh-Hgh"/>
                         <outlet property="rememberLabel" destination="WDf-id-dGe" id="6b6-wR-Wmo"/>
                         <outlet property="restartGameButton" destination="KNM-LG-gob" id="1yP-Sa-QDK"/>
                         <outlet property="scoreLabel1" destination="Qkj-Br-woB" id="Nbd-xY-BNE"/>
@@ -145,10 +161,10 @@
             </objects>
             <point key="canvasLocation" x="1114" y="23"/>
         </scene>
-        <!--View Controller-->
+        <!--About1 View Controller-->
         <scene sceneID="VUh-h9-Tuo">
             <objects>
-                <viewController id="rhV-bz-Y3A" sceneMemberID="viewController">
+                <viewController id="rhV-bz-Y3A" customClass="About1ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5bM-jZ-ptt"/>
                         <viewControllerLayoutGuide type="bottom" id="zEs-DE-FKT"/>
@@ -158,13 +174,23 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eA1-ht-eyJ">
-                                <rect key="frame" x="20" y="20" width="35" height="30"/>
+                                <rect key="frame" x="276" y="528" width="24" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
+                                <state key="normal" backgroundImage="Arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="mPA-Td-Cp0" kind="modal" id="U1S-SH-DvP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h6M-2l-hbJ">
+                                <rect key="frame" x="20" y="528" width="24" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" backgroundImage="Arrow_flipped.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="mPA-Td-Cp0" kind="modal" id="kef-i8-SEI"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -174,40 +200,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jfC-Wi-uJu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="678" y="707"/>
-        </scene>
-        <!--View Controller - Help-->
-        <scene sceneID="JfG-Q2-Ww9">
-            <objects>
-                <viewController id="jvv-fS-FBF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="5QE-oo-oOU"/>
-                        <viewControllerLayoutGuide type="bottom" id="rjH-JU-tAL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="RLY-sx-T82">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gzJ-29-FdJ">
-                                <rect key="frame" x="20" y="20" width="35" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="mPA-Td-Cp0" kind="modal" id="QXF-Xf-41c"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Help" id="XzB-cf-tEa"/>
-                    <nil key="simulatedTopBarMetrics"/>
-                    <nil key="simulatedBottomBarMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Eth-Wd-i8A" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1114" y="707"/>
+            <point key="canvasLocation" x="678" y="-645"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="3LN-nz-4FG">
@@ -222,7 +215,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uY2-GM-jvA">
-                                <rect key="frame" x="32" y="266" width="256" height="35"/>
+                                <rect key="frame" x="29" y="469" width="256" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="29"/>
                                 <state key="normal" title="LET'S GO!" backgroundImage="easyButton.png">
@@ -233,20 +226,8 @@
                                     <segue destination="vXZ-lx-hvc" kind="modal" id="B7Y-Uy-STI"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e6T-7R-vfY">
-                                <rect key="frame" x="32" y="353" width="256" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="29"/>
-                                <state key="normal" title="HELP" backgroundImage="hardButton.png">
-                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted" backgroundImage="hardButtonPressed.png"/>
-                                <connections>
-                                    <segue destination="jvv-fS-FBF" kind="modal" id="NYO-oB-eTd"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6s6-mn-aOX">
-                                <rect key="frame" x="12" y="309" width="302" height="36"/>
+                                <rect key="frame" x="9" y="512" width="302" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="29"/>
                                 <state key="normal" title="ABOUT" backgroundImage="mediumButton.png">
@@ -273,6 +254,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Arrow.png" width="32" height="32"/>
+        <image name="Arrow_flipped.png" width="32" height="32"/>
         <image name="easyButton.png" width="241" height="45"/>
         <image name="easyButtonPressed.png" width="241" height="45"/>
         <image name="hardButton.png" width="256" height="35"/>
@@ -287,6 +270,6 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="QXF-Xf-41c"/>
+        <segue reference="kef-i8-SEI"/>
     </inferredMetricsTieBreakers>
 </document>

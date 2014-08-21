@@ -23,6 +23,7 @@
 		9E3B001919A471A6001D8BBE /* Arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B001819A471A6001D8BBE /* Arrow.png */; };
 		9E3B001B19A47209001D8BBE /* Arrow_flipped.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B001A19A47209001D8BBE /* Arrow_flipped.png */; };
 		9E3B001D19A58CAE001D8BBE /* s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B001C19A58CAE001D8BBE /* s2.png */; };
+		9E3B001F19A58DA8001D8BBE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3B001E19A58DA8001D8BBE /* AudioToolbox.framework */; };
 		9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */; };
 		9EE52385199A9FAF00D5276C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52384199A9FAF00D5276C /* Foundation.framework */; };
 		9EE52387199A9FAF00D5276C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52386199A9FAF00D5276C /* CoreGraphics.framework */; };
@@ -66,6 +67,7 @@
 		9E3B001819A471A6001D8BBE /* Arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Arrow.png; sourceTree = "<group>"; };
 		9E3B001A19A47209001D8BBE /* Arrow_flipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_flipped.png; path = ../Arrow_flipped.png; sourceTree = "<group>"; };
 		9E3B001C19A58CAE001D8BBE /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
+		9E3B001E19A58DA8001D8BBE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButtonPressed.png; path = ../mediumButtonPressed.png; sourceTree = "<group>"; };
 		9E3BFFFC19A1B205001D8BBE /* mediumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButton.png; path = ../mediumButton.png; sourceTree = "<group>"; };
 		9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easyButtonPressed.png; path = ../easyButtonPressed.png; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3B001F19A58DA8001D8BBE /* AudioToolbox.framework in Frameworks */,
 				9E3B001019A2DC2E001D8BBE /* Social.framework in Frameworks */,
 				9EE523BA199AAB9500D5276C /* CoreMotion.framework in Frameworks */,
 				9EE52387199A9FAF00D5276C /* CoreGraphics.framework in Frameworks */,
@@ -140,6 +143,7 @@
 		9EE52383199A9FAF00D5276C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9E3B001E19A58DA8001D8BBE /* AudioToolbox.framework */,
 				9E3B000F19A2DC2E001D8BBE /* Social.framework */,
 				9EE523B9199AAB9500D5276C /* CoreMotion.framework */,
 				9EE52384199A9FAF00D5276C /* Foundation.framework */,

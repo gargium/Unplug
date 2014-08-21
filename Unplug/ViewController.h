@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <Social/Social.h>
 #import <CoreMotion/CoreMotion.h>
+#import <AudioToolbox/AudioServices.h>
 
 int addedScore;
 int scoreNumber;

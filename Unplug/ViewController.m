@@ -152,6 +152,8 @@
     
     [_myTimer invalidate];
     
+    AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
+    
     gameOverLabel.hidden = NO;
     reasonForGameOverLabel.hidden = NO;
     rememberLabel.hidden = YES;
@@ -258,7 +260,7 @@
                                                       delegate:nil
                                              cancelButtonTitle:@"Got it"
                                              otherButtonTitles:nil];
-    [reminder show]; 
+    [reminder show];
     [super viewDidLoad];
     [self gameDefaults];
     [self startGame];

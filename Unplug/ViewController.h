@@ -15,6 +15,7 @@ int addedScore;
 int scoreNumber;
 int adjustedScore;
 int timeElapsed;
+int highScoreNumber; 
 
 @interface ViewController : UIViewController {
     
@@ -43,6 +44,7 @@ int timeElapsed;
 @property (weak, nonatomic) IBOutlet UILabel *gameOverLabel;
 @property (weak, nonatomic) IBOutlet UILabel *reasonForGameOverLabel;
 @property (weak, nonatomic) NSString *timeToPostToNetwork;
+@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) updateScore;

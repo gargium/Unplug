@@ -25,7 +25,7 @@
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
 @synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver, stopwatchLabel, secondsLabel, gameOverLabel, reasonForGameOverLabel;
-@synthesize timeToPostToNetwork;
+@synthesize timeToPostToNetwork, highScoreLabel;
 
 
 - (NSTimer *)createTimer {
@@ -182,7 +182,16 @@
     }];
 
 }
+
 - (void) gameOver {
+    
+    if (scoreNumber > highScoreNumber) {
+        highScoreNumber = scoreNumber;
+        [[NSUserDefaults standardUserDefaults] setInteger:highScoreNumber forKey:@"HighScoreSaved"];
+    }
+    highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i", highScoreNumber];
+    highScoreLabel.hidden = NO;
+
     
     [_myTimer invalidate];
     
@@ -198,6 +207,7 @@
 //    UIAlertView *gameOverAlert = [[UIAlertView alloc] initWithTitle:@"Game Over!" message:reasonForGameOver delegate:nil cancelButtonTitle:@"Dismiss" otherButtonTitles:nil];
 //    [gameOverAlert show];
     [motionManager stopGyroUpdates];
+    
 }
 
 - (void) startGame {
@@ -270,6 +280,7 @@
 
 - (void) gameDefaults {
     
+    highScoreLabel.hidden = YES;
     gameOverLabel.hidden = YES;
     reasonForGameOverLabel.hidden = YES;
     secondsLabel.text = @"seconds";
@@ -294,6 +305,8 @@
                                                       delegate:nil
                                              cancelButtonTitle:@"Got it"
                                              otherButtonTitles:nil];
+    
+    highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScoreSaved"];
     [reminder show];
     [super viewDidLoad];
     [self gameDefaults];

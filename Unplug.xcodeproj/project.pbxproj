@@ -24,6 +24,9 @@
 		9E3B001B19A47209001D8BBE /* Arrow_flipped.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B001A19A47209001D8BBE /* Arrow_flipped.png */; };
 		9E3B001D19A58CAE001D8BBE /* s2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B001C19A58CAE001D8BBE /* s2.png */; };
 		9E3B001F19A58DA8001D8BBE /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E3B001E19A58DA8001D8BBE /* AudioToolbox.framework */; };
+		9E3B002219A5A1AE001D8BBE /* About2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B002119A5A1AE001D8BBE /* About2ViewController.m */; };
+		9E3B002519A5B439001D8BBE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B002419A5B439001D8BBE /* MainViewController.m */; };
+		9E3B002719A5B492001D8BBE /* s_Main.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B002619A5B492001D8BBE /* s_Main.png */; };
 		9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */; };
 		9EE52385199A9FAF00D5276C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52384199A9FAF00D5276C /* Foundation.framework */; };
 		9EE52387199A9FAF00D5276C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52386199A9FAF00D5276C /* CoreGraphics.framework */; };
@@ -68,6 +71,11 @@
 		9E3B001A19A47209001D8BBE /* Arrow_flipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Arrow_flipped.png; path = ../Arrow_flipped.png; sourceTree = "<group>"; };
 		9E3B001C19A58CAE001D8BBE /* s2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = s2.png; sourceTree = "<group>"; };
 		9E3B001E19A58DA8001D8BBE /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		9E3B002019A5A1AE001D8BBE /* About2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = About2ViewController.h; path = ../About2ViewController.h; sourceTree = "<group>"; };
+		9E3B002119A5A1AE001D8BBE /* About2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = About2ViewController.m; path = ../About2ViewController.m; sourceTree = "<group>"; };
+		9E3B002319A5B439001D8BBE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		9E3B002419A5B439001D8BBE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		9E3B002619A5B492001D8BBE /* s_Main.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = s_Main.png; path = ../s_Main.png; sourceTree = "<group>"; };
 		9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButtonPressed.png; path = ../mediumButtonPressed.png; sourceTree = "<group>"; };
 		9E3BFFFC19A1B205001D8BBE /* mediumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButton.png; path = ../mediumButton.png; sourceTree = "<group>"; };
 		9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easyButtonPressed.png; path = ../easyButtonPressed.png; sourceTree = "<group>"; };
@@ -160,8 +168,12 @@
 				9EE52393199A9FAF00D5276C /* AppDelegate.h */,
 				9EE52394199A9FAF00D5276C /* AppDelegate.m */,
 				9EE52396199A9FAF00D5276C /* Main.storyboard */,
+				9E3B002319A5B439001D8BBE /* MainViewController.h */,
+				9E3B002419A5B439001D8BBE /* MainViewController.m */,
 				9E3B001519A47066001D8BBE /* About1ViewController.h */,
 				9E3B001619A47066001D8BBE /* About1ViewController.m */,
+				9E3B002019A5A1AE001D8BBE /* About2ViewController.h */,
+				9E3B002119A5A1AE001D8BBE /* About2ViewController.m */,
 				9EE52399199A9FAF00D5276C /* ViewController.h */,
 				9EE5239A199A9FAF00D5276C /* ViewController.m */,
 				9EE5239C199A9FAF00D5276C /* Images.xcassets */,
@@ -175,6 +187,7 @@
 			children = (
 				9E3B001C19A58CAE001D8BBE /* s2.png */,
 				9E3B001A19A47209001D8BBE /* Arrow_flipped.png */,
+				9E3B002619A5B492001D8BBE /* s_Main.png */,
 				9E3B001819A471A6001D8BBE /* Arrow.png */,
 				9E3B001319A47051001D8BBE /* s1.png */,
 				9E3B001119A2E750001D8BBE /* unplugBG1.png */,
@@ -292,6 +305,7 @@
 			files = (
 				9E3B000E19A2DC15001D8BBE /* twitterlogo.png in Resources */,
 				9EE5239D199A9FAF00D5276C /* Images.xcassets in Resources */,
+				9E3B002719A5B492001D8BBE /* s_Main.png in Resources */,
 				9E3B000519A1B400001D8BBE /* hardButtonPressed.png in Resources */,
 				9E3B000D19A2DC15001D8BBE /* Facebook_Logo.png in Resources */,
 				9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */,
@@ -327,8 +341,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E3B001719A47066001D8BBE /* About1ViewController.m in Sources */,
+				9E3B002519A5B439001D8BBE /* MainViewController.m in Sources */,
 				9EE5239B199A9FAF00D5276C /* ViewController.m in Sources */,
 				9EE52395199A9FAF00D5276C /* AppDelegate.m in Sources */,
+				9E3B002219A5A1AE001D8BBE /* About2ViewController.m in Sources */,
 				9EE52391199A9FAF00D5276C /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

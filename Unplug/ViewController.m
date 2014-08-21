@@ -8,16 +8,10 @@
 
 
 //TODO LIST:
-//- Change the social update presets to reflect formatting of time (use the %02d settings found in the code)
-//- Add artwork for each view
-//- Create one of those intro slideshow sequences
 //- High score storage
 //- Implement a way for the system to remember to only display the intro slideshow on the first launch
-//- Implement a way for the system to show the whole slideshow all over again if the user presses the help button
-//- Implement a help button ^^
 //- Implement sensitivity levels ? (iffy on this one)
 //- Add the start buttons on the first view in the storyboard to the intro slideshow views on first launch, and then display the start game button only on subsequent launches
-//- Add the prefersStatusBarHidden method to all view controllers
 
 
 #import "ViewController.h"
@@ -31,6 +25,8 @@
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
 @synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver, stopwatchLabel, secondsLabel, gameOverLabel, reasonForGameOverLabel;
+@synthesize timeToPostToNetwork;
+
 
 - (NSTimer *)createTimer {
     return [NSTimer scheduledTimerWithTimeInterval:1.0
@@ -51,9 +47,13 @@
 - (NSString *)formattedTime:(int)totalSeconds
 {
     
-    int seconds = totalSeconds % 60;
-    int minutes = (totalSeconds / 60) % 60;
-    int hours = totalSeconds / 3600;
+//    int seconds = totalSeconds % 60;
+//    int minutes = (totalSeconds / 60) % 60;
+//    int hours = totalSeconds / 3600;
+    
+    int seconds = _elapsedTime % 60;
+    int minutes = (_elapsedTime / 60);
+    int hours = _elapsedTime / 3600;
     
     return [NSString stringWithFormat:@"%02d:%02d:%02d", hours, minutes, seconds];
 
@@ -89,6 +89,23 @@
 
 - (IBAction)postToTwitter:(id)sender {
     
+    //math to check if the time elapsed should be reported in seconds, minutes, or hours
+    
+    int seconds = _elapsedTime % 60;
+    int minutes = (_elapsedTime / 60);
+    int hours = _elapsedTime / 3600;
+    
+    int score = [scoreLabel1.text integerValue];
+    if (_elapsedTime < 60) {
+        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i seconds without touching or moving my iDevice!", score, seconds];
+    }
+    else if (_elapsedTime > 59 && _elapsedTime < 3600) {
+        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i minutes and %i seconds without touching or moving my iDevice!", score, minutes, seconds];
+    }
+    else if (_elapsedTime > 3599) {
+        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i hours, %i minutes, and %i seconds without touching or moving my iDevice!", score, hours, minutes, seconds];
+    }
+    
     //  Checking if Twitter account is available on device
     
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
@@ -96,8 +113,7 @@
         mySLComposerSheet = [[SLComposeViewController alloc] init]; // Initiate Social Controller
         mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter]; //Specify that we want Twitter,
         //  not an alternate Social Network
-        
-        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"I just scored %i points and lasted %i seconds before touching or moving my iDevice!" , adjustedScore, timeElapsed, mySLComposerSheet.serviceType]]; //Default text that will show up in the box
+        [mySLComposerSheet setInitialText:timeToPostToNetwork]; //Default text that will show up in the box
         [self presentViewController:mySLComposerSheet animated:YES completion:nil];
     }
     
@@ -124,10 +140,28 @@
 
 - (IBAction)postToFacebook:(id)sender {
     
+    //math to check if the time elapsed should be reported in seconds, minutes, or hours
+    
+    int seconds = _elapsedTime % 60;
+    int minutes = (_elapsedTime / 60);
+    int hours = _elapsedTime / 3600;
+    
+    int score = [scoreLabel1.text integerValue];
+    if (_elapsedTime < 60) {
+        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i seconds without touching or moving my iDevice!", score, seconds];
+    }
+    else if (_elapsedTime > 59 && _elapsedTime < 3600) {
+        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i minutes and %i seconds without touching or moving my iDevice!", score, minutes, seconds];
+    }
+    else if (_elapsedTime > 3599) {
+        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i hours, %i minutes, and %i seconds without touching or moving my iDevice!", score, hours, minutes, seconds];
+    }
+
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         mySLComposerSheet = [[SLComposeViewController alloc] init];
         mySLComposerSheet = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
-        [mySLComposerSheet setInitialText:[NSString stringWithFormat:@"I just scored %i points and lasted %i seconds before touching or moving my iDevice!" , adjustedScore, timeElapsed, mySLComposerSheet.serviceType]];
+        //[mySLComposerSheet setInitialText:[NSString stringWithFormat:@"I just scored %i points and lasted %i seconds before touching or moving my iDevice!" , adjustedScore, _elapsedTime, mySLComposerSheet.serviceType]];
+        [mySLComposerSheet setInitialText:timeToPostToNetwork];
         [self presentViewController:mySLComposerSheet animated:YES completion:nil];
     }
     

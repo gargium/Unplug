@@ -42,6 +42,7 @@ int timeElapsed;
 @property (weak, nonatomic) IBOutlet UILabel *secondsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *gameOverLabel;
 @property (weak, nonatomic) IBOutlet UILabel *reasonForGameOverLabel;
+@property (weak, nonatomic) NSString *timeToPostToNetwork;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) updateScore;

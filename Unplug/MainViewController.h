@@ -8,7 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+int highScoreNumber;
+
 @interface MainViewController : UIViewController
+
+
+@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
 
 - (BOOL) prefersStatusBarHidden;
 

@@ -14,6 +14,8 @@
 
 @implementation MainViewController
 
+@synthesize highScoreLabel;
+
 -(BOOL) prefersStatusBarHidden {
     
     return YES;
@@ -30,6 +32,10 @@
 
 - (void)viewDidLoad
 {
+    highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScoreSaved"];
+    highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i", highScoreNumber];
+
+    
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     

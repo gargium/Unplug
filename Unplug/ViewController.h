@@ -44,7 +44,7 @@ int highScoreNumber;
 @property (weak, nonatomic) IBOutlet UILabel *gameOverLabel;
 @property (weak, nonatomic) IBOutlet UILabel *reasonForGameOverLabel;
 @property (weak, nonatomic) NSString *timeToPostToNetwork;
-@property (weak, nonatomic) IBOutlet UILabel *highScoreLabel;
+@property (weak, nonatomic) IBOutlet UIButton *mainMenuButton;
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 -(void) updateScore;

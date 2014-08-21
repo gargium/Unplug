@@ -10,8 +10,6 @@
 //TODO LIST:
 //- High score storage
 //- Implement a way for the system to remember to only display the intro slideshow on the first launch
-//- Implement sensitivity levels ? (iffy on this one)
-//- Add the start buttons on the first view in the storyboard to the intro slideshow views on first launch, and then display the start game button only on subsequent launches
 
 
 #import "ViewController.h"
@@ -25,7 +23,7 @@
 @implementation ViewController
 @synthesize xGyroLabel, yGyroLabel, zGyroLabel;
 @synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver, stopwatchLabel, secondsLabel, gameOverLabel, reasonForGameOverLabel;
-@synthesize timeToPostToNetwork, highScoreLabel;
+@synthesize timeToPostToNetwork, mainMenuButton;
 
 
 - (NSTimer *)createTimer {
@@ -189,14 +187,13 @@
         highScoreNumber = scoreNumber;
         [[NSUserDefaults standardUserDefaults] setInteger:highScoreNumber forKey:@"HighScoreSaved"];
     }
-    highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i", highScoreNumber];
-    highScoreLabel.hidden = NO;
 
     
     [_myTimer invalidate];
     
     AudioServicesPlaySystemSound(kSystemSoundID_Vibrate);
     
+    mainMenuButton.hidden = NO;
     gameOverLabel.hidden = NO;
     reasonForGameOverLabel.hidden = NO;
     rememberLabel.hidden = YES;
@@ -280,7 +277,7 @@
 
 - (void) gameDefaults {
     
-    highScoreLabel.hidden = YES;
+    mainMenuButton.hidden = YES;
     gameOverLabel.hidden = YES;
     reasonForGameOverLabel.hidden = YES;
     secondsLabel.text = @"seconds";

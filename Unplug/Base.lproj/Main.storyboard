@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gVz-im-5ZS">
-                                <rect key="frame" x="-33" y="254" width="390" height="115"/>
+                                <rect key="frame" x="-33" y="305" width="390" height="115"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="69"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -52,21 +52,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time elapsed:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3xB-V0-pyE">
-                                <rect key="frame" x="0.0" y="244" width="320" height="28"/>
+                                <rect key="frame" x="0.0" y="295" width="320" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="27"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="seconds" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hoM-CX-Gh4">
-                                <rect key="frame" x="0.0" y="349" width="320" height="28"/>
+                                <rect key="frame" x="0.0" y="400" width="320" height="28"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="27"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KNM-LG-gob">
-                                <rect key="frame" x="16" y="420" width="288" height="40"/>
+                                <rect key="frame" x="135" y="508" width="169" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="31"/>
                                 <state key="normal" title="RESTART" backgroundImage="restartButton.png">
@@ -78,11 +78,25 @@
                                     <action selector="restartGameButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="aUW-F2-pQp"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IL-Dz-FUe">
-                                <rect key="frame" x="-8" y="464" width="341" height="45"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7C-et-hGJ">
+                                <rect key="frame" x="16" y="460" width="288" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="31"/>
-                                <state key="normal" title="POST A STATUS" backgroundImage="mediumButton.png">
+                                <state key="normal" title="MAIN MENU" backgroundImage="easyButton.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted" backgroundImage="hardButtonPressed.png"/>
+                                <connections>
+                                    <action selector="restartGameButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="tqs-iD-Kod"/>
+                                    <segue destination="mPA-Td-Cp0" kind="modal" id="dfe-Jw-tap"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1IL-Dz-FUe">
+                                <rect key="frame" x="55" y="499" width="72" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="31"/>
+                                <state key="normal" backgroundImage="Facebook_Logo.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -93,10 +107,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kIw-6i-Zit">
-                                <rect key="frame" x="16" y="511" width="288" height="40"/>
+                                <rect key="frame" x="16" y="508" width="59" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-UltraLight" family="Helvetica Neue" pointSize="31"/>
-                                <state key="normal" title="TWEET YOUR SCORE" backgroundImage="hardButton.png">
+                                <state key="normal" backgroundImage="twitterlogo.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -107,7 +121,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="remember:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="320" translatesAutoresizingMaskIntoConstraints="NO" id="WDf-id-dGe">
-                                <rect key="frame" x="2" y="481" width="320" height="19"/>
+                                <rect key="frame" x="-7" y="472" width="320" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
@@ -118,21 +132,15 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX8-zC-G2F">
-                                <rect key="frame" x="16" y="397" width="288" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="GAME OVER! " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9QS-tx-m61">
-                                <rect key="frame" x="0.0" y="177" width="320" height="41"/>
+                                <rect key="frame" x="0.0" y="201" width="320" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="reason for game over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rKr-V9-tLX">
-                                <rect key="frame" x="0.0" y="205" width="320" height="41"/>
+                                <rect key="frame" x="0.0" y="229" width="320" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="26"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -155,6 +163,7 @@
                         <outlet property="fbButton" destination="1IL-Dz-FUe" id="C9s-zD-WR6"/>
                         <outlet property="gameOverLabel" destination="9QS-tx-m61" id="QVY-yJ-mch"/>
                         <outlet property="highScoreLabel" destination="hX8-zC-G2F" id="EWT-bv-bBj"/>
+                        <outlet property="mainMenuButton" destination="q7C-et-hGJ" id="rv8-yA-4Ro"/>
                         <outlet property="reasonForGameOverLabel" destination="rKr-V9-tLX" id="9lh-dh-Hgh"/>
                         <outlet property="rememberLabel" destination="WDf-id-dGe" id="6b6-wR-Wmo"/>
                         <outlet property="restartGameButton" destination="KNM-LG-gob" id="1yP-Sa-QDK"/>
@@ -287,15 +296,25 @@
                                     <segue destination="rhV-bz-Y3A" kind="modal" id="Djd-eo-64D"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hX8-zC-G2F">
+                                <rect key="frame" x="29" y="431" width="256" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <toolbarItems>
                         <barButtonItem id="kiO-5T-c6x"/>
                     </toolbarItems>
+                    <navigationItem key="navigationItem" id="bHL-XG-hyM"/>
                     <nil key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="highScoreLabel" destination="hX8-zC-G2F" id="tlC-9Y-iRd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ygb-BT-cbb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -305,13 +324,14 @@
     <resources>
         <image name="Arrow.png" width="32" height="32"/>
         <image name="Arrow_flipped.png" width="32" height="32"/>
+        <image name="Facebook_Logo.png" width="574" height="614"/>
         <image name="easyButton.png" width="241" height="45"/>
         <image name="easyButtonPressed.png" width="241" height="45"/>
-        <image name="hardButton.png" width="256" height="35"/>
         <image name="hardButtonPressed.png" width="256" height="35"/>
         <image name="mediumButton.png" width="256" height="45"/>
         <image name="mediumButtonPressed.png" width="256" height="45"/>
         <image name="restartButton.png" width="224" height="36"/>
+        <image name="twitterlogo.png" width="1139" height="926"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
@@ -319,7 +339,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="dfe-Jw-tap"/>
         <segue reference="Djd-eo-64D"/>
-        <segue reference="YFH-tf-bAd"/>
     </inferredMetricsTieBreakers>
 </document>

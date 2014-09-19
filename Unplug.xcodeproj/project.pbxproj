@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9E3A2E8819CCB49600F45EEE /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 9E3A2E8519CCB49500F45EEE /* iRate.bundle */; };
+		9E3A2E8919CCB49600F45EEE /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3A2E8719CCB49600F45EEE /* iRate.m */; };
 		9E3B000019A1B205001D8BBE /* mediumButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFC19A1B205001D8BBE /* mediumButton.png */; };
 		9E3B000119A1B205001D8BBE /* easyButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */; };
 		9E3B000219A1B205001D8BBE /* easyButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFE19A1B205001D8BBE /* easyButton.png */; };
@@ -59,6 +61,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9E3A2E8519CCB49500F45EEE /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		9E3A2E8619CCB49600F45EEE /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		9E3A2E8719CCB49600F45EEE /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
 		9E3B000319A1B400001D8BBE /* hardButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hardButtonPressed.png; path = ../hardButtonPressed.png; sourceTree = "<group>"; };
 		9E3B000419A1B400001D8BBE /* hardButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hardButton.png; path = ../hardButton.png; sourceTree = "<group>"; };
 		9E3B000719A2D8D2001D8BBE /* restartButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = restartButtonPressed.png; path = ../restartButtonPressed.png; sourceTree = "<group>"; };
@@ -135,6 +140,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9E3A2E8A19CCB57E00F45EEE /* iRate Framework */ = {
+			isa = PBXGroup;
+			children = (
+				9E3A2E8519CCB49500F45EEE /* iRate.bundle */,
+				9E3A2E8619CCB49600F45EEE /* iRate.h */,
+				9E3A2E8719CCB49600F45EEE /* iRate.m */,
+			);
+			name = "iRate Framework";
+			sourceTree = "<group>";
+		};
+		9E3A2E8B19CCB58F00F45EEE /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				9EE52396199A9FAF00D5276C /* Main.storyboard */,
+				9EC656DA19B00DD00069097B /* Main-iPad.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
 		9EC656D519B009780069097B /* iPad */ = {
 			isa = PBXGroup;
 			children = (
@@ -179,10 +203,10 @@
 			isa = PBXGroup;
 			children = (
 				9EC656D519B009780069097B /* iPad */,
+				9E3A2E8A19CCB57E00F45EEE /* iRate Framework */,
+				9E3A2E8B19CCB58F00F45EEE /* StoryBoards */,
 				9EE52393199A9FAF00D5276C /* AppDelegate.h */,
 				9EE52394199A9FAF00D5276C /* AppDelegate.m */,
-				9EE52396199A9FAF00D5276C /* Main.storyboard */,
-				9EC656DA19B00DD00069097B /* Main-iPad.storyboard */,
 				9E3B002319A5B439001D8BBE /* MainViewController.h */,
 				9E3B002419A5B439001D8BBE /* MainViewController.m */,
 				9E3B001519A47066001D8BBE /* About1ViewController.h */,
@@ -320,6 +344,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9E3A2E8819CCB49600F45EEE /* iRate.bundle in Resources */,
 				9E3B000E19A2DC15001D8BBE /* twitterlogo.png in Resources */,
 				9EE5239D199A9FAF00D5276C /* Images.xcassets in Resources */,
 				9E3B002719A5B492001D8BBE /* s_Main.png in Resources */,
@@ -362,6 +387,7 @@
 			files = (
 				9E3B001719A47066001D8BBE /* About1ViewController.m in Sources */,
 				9E3B002519A5B439001D8BBE /* MainViewController.m in Sources */,
+				9E3A2E8919CCB49600F45EEE /* iRate.m in Sources */,
 				9EE5239B199A9FAF00D5276C /* ViewController.m in Sources */,
 				9EE52395199A9FAF00D5276C /* AppDelegate.m in Sources */,
 				9E3B002219A5A1AE001D8BBE /* About2ViewController.m in Sources */,

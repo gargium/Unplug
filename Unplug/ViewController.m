@@ -312,19 +312,19 @@ int highScoreNumber;
     highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScoreSaved"];
     [reminder show];
     
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
-    if (launchCount >= 1) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Like or loathe this app?"
-                                                        message:@"Rate us on the app store!"
-                                                       delegate:nil
-                                              cancelButtonTitle:@"No thanks"
-                                              otherButtonTitles:@"Sure!", @"Remind me later",  nil];
-        
-        if (showRateUsAlert) {
-            [alert show];
-        }
-    }
+//    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+//    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
+//    if (launchCount >= 1) {
+//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Like or loathe this app?"
+//                                                        message:@"Rate us on the app store!"
+//                                                       delegate:nil
+//                                              cancelButtonTitle:@"No thanks"
+//                                              otherButtonTitles:@"Sure!", @"Remind me later",  nil];
+//        
+//        if (showRateUsAlert) {
+//            [alert show];
+//        }
+//    }
     
 
     [super viewDidLoad];
@@ -332,29 +332,29 @@ int highScoreNumber;
     [self startGame];
    
 }
-
--(void) alertView:(UIAlertView *) alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == 1) {
-        //remind me later button, so no action is necessary since the next time they open the app, the alert will pop up.
-        //shows the alert for the next time
-        
-        
-        //turn the boolean logic into an nsuser defaults thing -- reminder for next time.
-        showRateUsAlert = YES;
-        
-        
-    } else if (buttonIndex == 2) {
-        //sure! button
-        //when clicked, takes user to the app store to rate the app.
-        
-        showRateUsAlert = YES;
-        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/unplug-pro/id911651752?ls=1&mt=8"]];
-    
-    } else if (buttonIndex == [alertView cancelButtonIndex]) {
-        showRateUsAlert = NO;
-    
-    }
-}
+//
+//-(void) alertView:(UIAlertView *) alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+//    if (buttonIndex == 1) {
+//        //remind me later button, so no action is necessary since the next time they open the app, the alert will pop up.
+//        //shows the alert for the next time
+//        
+//        
+//        //turn the boolean logic into an nsuser defaults thing -- reminder for next time.
+//        showRateUsAlert = YES;
+//        
+//        
+//    } else if (buttonIndex == 2) {
+//        //sure! button
+//        //when clicked, takes user to the app store to rate the app.
+//        
+//        showRateUsAlert = YES;
+//        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/unplug-pro/id911651752?ls=1&mt=8"]];
+//    
+//    } else if (buttonIndex == [alertView cancelButtonIndex]) {
+//        showRateUsAlert = NO;
+//    
+//    }
+//}
 
 - (void)didReceiveMemoryWarning
 {

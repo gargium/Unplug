@@ -7,17 +7,28 @@
 //
 
 #import "AppDelegate.h"
+#import "iRate.h"
 
 @implementation AppDelegate
+
+
++ (void)initialize
+{
+    //configure iRate
+    //for debug purposes only, i've set the prompt to show up after 0 days and only 1 use.
+    [iRate sharedInstance].daysUntilPrompt = 0;
+    [iRate sharedInstance].usesUntilPrompt = 1;
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+//    
+//    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+//    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
+//    launchCount++;
+//    [prefs setInteger:launchCount forKey:@"launchCount"];
     
-    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
-    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
-    launchCount++;
-    [prefs setInteger:launchCount forKey:@"launchCount"];
     return YES;
 }
 							

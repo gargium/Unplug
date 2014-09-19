@@ -3,13 +3,14 @@ VERSION 1.1 CHANGELOG***********************************************************
 TODO LIST:
 - Implement a way for the system to remember to only display the intro slideshow on the first launch
 - Change the showAlert boolean into an NSUserDefaults thing so the Rate My App alert works properly
-- Add  easy, medium, hard game modes that alter sensitivity
+- Add  easy, medium, hard game modes with buttons that fade in and out if lets go is pressed that alter sensitivity
 - This time make sure the app goes in the games section LOL
 - Have a second game mode for countdown - using a countdown timer.
 - Push notifications to get people to keep playing.
 - Add photo backgrounds instead of gradients. No longer is the flat look necessary.
 - Change icon to be more vibrant and neon-y. No clue what that means for now but I'll figure it out LOL.
-
+- Document all of the code (something I should have been doing since day 1)
+- Switch to iRate instead of my custom implementation for creating the rating dialoge.
 
 CHANGELOG:
 + Changed the default text that shows up when sharing on facebook or twitter.

@@ -19,7 +19,7 @@
 int timeElapsed;
 int highScoreNumber;
 
-BOOL showRateUsAlert;
+//BOOL showRateUsAlert;
 
 @interface ViewController : UIViewController {
     

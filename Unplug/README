@@ -1,0 +1,8 @@
+TODO LIST:
+- Implement a way for the system to remember to only display the intro slideshow on the first launch
+
+
+CHANGELOG:
++ Changed the default text that shows up when sharing on facebook or twitter.
++ Deleted the scoring mechanism -- it's redundant and not needed since the time lasted can be used as a scoring mechanism anyways.
++ Changed the high score label to adapt to the amount of time that the user lasted. 

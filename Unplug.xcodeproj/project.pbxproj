@@ -28,6 +28,8 @@
 		9E3B002519A5B439001D8BBE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E3B002419A5B439001D8BBE /* MainViewController.m */; };
 		9E3B002719A5B492001D8BBE /* s_Main.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3B002619A5B492001D8BBE /* s_Main.png */; };
 		9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E3BFFFB19A1B205001D8BBE /* mediumButtonPressed.png */; };
+		9EB49C7719CBA09B00B39AC9 /* README in Resources */ = {isa = PBXBuildFile; fileRef = 9EB49C7519CBA09B00B39AC9 /* README */; };
+		9EB49C7819CBA09B00B39AC9 /* TemplateIcon2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EB49C7619CBA09B00B39AC9 /* TemplateIcon2x.png */; };
 		9EC656DB19B00DD00069097B /* Main-iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9EC656DA19B00DD00069097B /* Main-iPad.storyboard */; };
 		9EE52385199A9FAF00D5276C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52384199A9FAF00D5276C /* Foundation.framework */; };
 		9EE52387199A9FAF00D5276C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9EE52386199A9FAF00D5276C /* CoreGraphics.framework */; };
@@ -81,6 +83,8 @@
 		9E3BFFFC19A1B205001D8BBE /* mediumButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mediumButton.png; path = ../mediumButton.png; sourceTree = "<group>"; };
 		9E3BFFFD19A1B205001D8BBE /* easyButtonPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easyButtonPressed.png; path = ../easyButtonPressed.png; sourceTree = "<group>"; };
 		9E3BFFFE19A1B205001D8BBE /* easyButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = easyButton.png; path = ../easyButton.png; sourceTree = "<group>"; };
+		9EB49C7519CBA09B00B39AC9 /* README */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README; sourceTree = "<group>"; };
+		9EB49C7619CBA09B00B39AC9 /* TemplateIcon2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = TemplateIcon2x.png; sourceTree = "<group>"; };
 		9EC656DA19B00DD00069097B /* Main-iPad.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Main-iPad.storyboard"; sourceTree = "<group>"; };
 		9EE52381199A9FAF00D5276C /* Unplug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unplug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EE52384199A9FAF00D5276C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -187,6 +191,8 @@
 				9E3B002119A5A1AE001D8BBE /* About2ViewController.m */,
 				9EE52399199A9FAF00D5276C /* ViewController.h */,
 				9EE5239A199A9FAF00D5276C /* ViewController.m */,
+				9EB49C7519CBA09B00B39AC9 /* README */,
+				9EB49C7619CBA09B00B39AC9 /* TemplateIcon2x.png */,
 				9EE5239C199A9FAF00D5276C /* Images.xcassets */,
 				9EE5238B199A9FAF00D5276C /* Supporting Files */,
 			);
@@ -320,6 +326,8 @@
 				9E3B000519A1B400001D8BBE /* hardButtonPressed.png in Resources */,
 				9E3B000D19A2DC15001D8BBE /* Facebook_Logo.png in Resources */,
 				9E3BFFFF19A1B205001D8BBE /* mediumButtonPressed.png in Resources */,
+				9EB49C7819CBA09B00B39AC9 /* TemplateIcon2x.png in Resources */,
+				9EB49C7719CBA09B00B39AC9 /* README in Resources */,
 				9E3B000619A1B400001D8BBE /* hardButton.png in Resources */,
 				9EC656DB19B00DD00069097B /* Main-iPad.storyboard in Resources */,
 				9E3B001D19A58CAE001D8BBE /* s2.png in Resources */,
@@ -485,7 +493,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unplug/Unplug-Prefix.pch";
 				INFOPLIST_FILE = "Unplug/Unplug-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
@@ -500,7 +508,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Unplug/Unplug-Prefix.pch";
 				INFOPLIST_FILE = "Unplug/Unplug-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;

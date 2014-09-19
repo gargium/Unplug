@@ -6,13 +6,11 @@
 //  Copyright (c) 2014 Gargium Interactive. All rights reserved.
 //
 
-
-//TODO LIST:
-//- Implement a way for the system to remember to only display the intro slideshow on the first launch
-
-
 #import "ViewController.h"
 #import "Foundation/Foundation.h"
+
+int highScoreNumber;
+
 
 @interface ViewController ()
 
@@ -20,8 +18,19 @@
 
 
 @implementation ViewController
-@synthesize xGyroLabel, yGyroLabel, zGyroLabel;
-@synthesize phoneMovedLabel, scoreLabel1, twitterButton, restartGameButton, fbButton, dontTouchLabel, rememberLabel, reasonForGameOver, stopwatchLabel, secondsLabel, gameOverLabel, reasonForGameOverLabel;
+@synthesize twitterButton,
+            restartGameButton,
+            fbButton,
+            dontTouchLabel,
+            rememberLabel,
+            reasonForGameOver,
+            stopwatchLabel,
+            secondsLabel,
+            gameOverLabel,
+            reasonForGameOverLabel;
+
+// scoreLabel1;
+
 @synthesize timeToPostToNetwork, mainMenuButton;
 
 
@@ -92,15 +101,15 @@
     int minutes = (_elapsedTime / 60);
     int hours = _elapsedTime / 3600;
     
-    int score = [scoreLabel1.text integerValue];
+//    int score = [scoreLabel1.text integerValue];
     if (_elapsedTime < 60) {
-        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i seconds without touching or moving my iDevice!", score, seconds];
+        timeToPostToNetwork = [NSString stringWithFormat:@"I lasted %i seconds without my iDevice! Find out how long you can last with Unplug Pro on the App Store!", seconds];
     }
     else if (_elapsedTime > 59 && _elapsedTime < 3600) {
-        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i minutes and %i seconds without touching or moving my iDevice!", score, minutes, seconds];
+        timeToPostToNetwork = [NSString stringWithFormat:@"I lasted %i minutes and %i seconds without my iDevice! Find out how long you can last with Unplug Pro on the App Store!", minutes, seconds];
     }
     else if (_elapsedTime > 3599) {
-        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i hours, %i minutes, and %i seconds without touching or moving my iDevice!", score, hours, minutes, seconds];
+        timeToPostToNetwork = [NSString stringWithFormat:@"I lasted %i hours, %i minutes, and %i seconds without my iDevice! Find out how long you can last with Unplug Pro on the App Store!", hours, minutes, seconds];
     }
     
     //  Checking if Twitter account is available on device
@@ -143,15 +152,15 @@
     int minutes = (_elapsedTime / 60);
     int hours = _elapsedTime / 3600;
     
-    int score = [scoreLabel1.text integerValue];
+    //    int score = [scoreLabel1.text integerValue];
     if (_elapsedTime < 60) {
-        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i seconds without touching or moving my iDevice!", score, seconds];
+        timeToPostToNetwork = [NSString stringWithFormat:@"I lasted %i seconds without my iDevice! Find out how long you can last with Unplug Pro on the App Store!", seconds];
     }
     else if (_elapsedTime > 59 && _elapsedTime < 3600) {
-        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i minutes and %i seconds without touching or moving my iDevice!", score, minutes, seconds];
+        timeToPostToNetwork = [NSString stringWithFormat:@"I lasted %i minutes and %i seconds without my iDevice! Find out how long you can last with Unplug Pro on the App Store!", minutes, seconds];
     }
     else if (_elapsedTime > 3599) {
-        timeToPostToNetwork = [NSString stringWithFormat:@"I just scored %i points and lasted %i hours, %i minutes, and %i seconds without touching or moving my iDevice!", score, hours, minutes, seconds];
+        timeToPostToNetwork = [NSString stringWithFormat:@"I lasted %i hours, %i minutes, and %i seconds without my iDevice! Find out how long you can last with Unplug Pro on the App Store!", hours, minutes, seconds];
     }
 
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
@@ -182,9 +191,13 @@
 
 - (void) gameOver {
     
-    if (scoreNumber > highScoreNumber) {
-        highScoreNumber = scoreNumber;
-        [[NSUserDefaults standardUserDefaults] setInteger:highScoreNumber forKey:@"HighScoreSaved"];
+//    if (scoreNumber > highScoreNumber) {
+//        highScoreNumber = scoreNumber;
+//        [[NSUserDefaults standardUserDefaults] setInteger:highScoreNumber forKey:@"HighScoreSaved"];
+    
+      if (_elapsedTime > highScoreNumber) {
+            highScoreNumber = _elapsedTime;
+            [[NSUserDefaults standardUserDefaults] setInteger:highScoreNumber forKey:@"HighScoreSaved"];
     }
 
     
@@ -228,14 +241,6 @@
         [motionManager startGyroUpdatesToQueue:queue
                                    withHandler:^(CMGyroData *gyroData, NSError *error) {
                                        CMRotationRate rotate = gyroData.rotationRate;
-                                       xGyroLabel.text = [NSString stringWithFormat:@"%f",rotate.x];
-                                       
-                                       yGyroLabel.text = [NSString stringWithFormat:@"%f",
-                                                          rotate.y];
-                                       
-                                       zGyroLabel.text = [NSString stringWithFormat:@"%f",
-                                                          rotate.z];
-                                       
                                        if (_elapsedTime > 3599) {
                                            self.secondsLabel.text = @"hours";
                                        }
@@ -246,13 +251,13 @@
                                            self.secondsLabel.text = @"seconds";
                                        }
                                        
-                                       addedScore = 1;
-                                       [self updateScore];
+//                                       addedScore = 1;
+//                                       [self updateScore];
                                        
 
-                                       if (rotate.x > .1 || rotate.x < -.1 ||
-                                           rotate.y > .1 || rotate.y < -.1 ||
-                                           rotate.z > .1 || rotate.z < -.1) {
+                                       if (rotate.x > .3 || rotate.x < -.3 ||
+                                           rotate.y > .3 || rotate.y < -.3 ||
+                                           rotate.z > .3 || rotate.z < -.3) {
                                            reasonForGameOverLabel.text = [NSString stringWithFormat:@"iDevice has been moved!"];
                                            reasonForGameOver = @"iDevice has been moved!";
                                            [self gameOver];
@@ -262,17 +267,19 @@
     }
 }
 
-- (void) updateScore {
-    
-    scoreNumber = scoreNumber + addedScore;
-    addedScore = addedScore - 1;
-    if (addedScore < 0) {
-        addedScore = 0;
-    }
-    adjustedScore = scoreNumber / M_PI;
-    scoreLabel1.text = [NSString stringWithFormat:@"%i", adjustedScore];
-    
-}
+//- (void) updateScore {
+//    
+////    scoreNumber = scoreNumber + addedScore;
+////    addedScore = addedScore - 1;
+////    if (addedScore < 0) {
+////        addedScore = 0;
+////    }
+////    adjustedScore = scoreNumber / M_PI;
+////    scoreLabel1.text = [NSString stringWithFormat:@"%i", adjustedScore];
+//    
+////ADD A SCORENUMBER = ELAPSED TIME THING HERE. CAN'T DO MUCH UNTIL I HAVE AN ACTUAL IDEVICE TO PLAY WITH
+//    
+//}
 
 - (void) gameDefaults {
     
@@ -285,8 +292,8 @@
     restartGameButton.hidden = YES;
     twitterButton.hidden = YES;
     fbButton.hidden = YES;
-    scoreNumber = 0;
-    phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
+//    scoreNumber = 0;
+//    phoneMovedLabel.text = [NSString stringWithFormat:@"Phone has not been moved"];
     UIImage *backgroundImageGold = [UIImage imageNamed:@"unplugBG1.png"];
     UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:self.view.frame];
     backgroundImageView.image = backgroundImageGold;
@@ -304,10 +311,49 @@
     
     highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScoreSaved"];
     [reminder show];
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
+    if (launchCount >= 1) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Like or loathe this app?"
+                                                        message:@"Rate us on the app store!"
+                                                       delegate:nil
+                                              cancelButtonTitle:@"No thanks"
+                                              otherButtonTitles:@"Sure!", @"Remind me later",  nil];
+        
+        if (showRateUsAlert) {
+            [alert show];
+        }
+    }
+    
+
     [super viewDidLoad];
     [self gameDefaults];
     [self startGame];
    
+}
+
+-(void) alertView:(UIAlertView *) alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == 1) {
+        //remind me later button, so no action is necessary since the next time they open the app, the alert will pop up.
+        //shows the alert for the next time
+        
+        
+        //turn the boolean logic into an nsuser defaults thing -- reminder for next time. 
+        showRateUsAlert = YES;
+        
+        
+    } else if (buttonIndex == 2) {
+        //sure! button
+        //when clicked, takes user to the app store to rate the app.
+        
+        showRateUsAlert = YES;
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://itunes.apple.com/us/app/unplug-pro/id911651752?ls=1&mt=8"]];
+    
+    } else if (buttonIndex == [alertView cancelButtonIndex]) {
+        showRateUsAlert = NO;
+    
+    }
 }
 
 - (void)didReceiveMemoryWarning

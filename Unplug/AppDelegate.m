@@ -13,6 +13,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    
+    NSUserDefaults *prefs = [NSUserDefaults standardUserDefaults];
+    NSInteger launchCount = [prefs integerForKey:@"launchCount"];
+    launchCount++;
+    [prefs setInteger:launchCount forKey:@"launchCount"];
     return YES;
 }
 							

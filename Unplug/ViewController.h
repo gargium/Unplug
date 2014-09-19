@@ -10,12 +10,16 @@
 #import <Social/Social.h>
 #import <CoreMotion/CoreMotion.h>
 #import <AudioToolbox/AudioServices.h>
+#import "MainViewController.h"
 
-int addedScore;
-int scoreNumber;
-int adjustedScore;
+//int addedScore;
+//int scoreNumber;
+//int adjustedScore;
+
 int timeElapsed;
-int highScoreNumber; 
+int highScoreNumber;
+
+BOOL showRateUsAlert;
 
 @interface ViewController : UIViewController {
     
@@ -26,11 +30,8 @@ int highScoreNumber;
 }
 
 
-@property (weak, nonatomic) IBOutlet UILabel *xGyroLabel;
-@property (weak, nonatomic) IBOutlet UILabel *yGyroLabel;
-@property (weak, nonatomic) IBOutlet UILabel *zGyroLabel;
-@property (weak, nonatomic) IBOutlet UILabel *phoneMovedLabel;
-@property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
+//@property (weak, nonatomic) IBOutlet UILabel *phoneMovedLabel;
+//@property (weak, nonatomic) IBOutlet UILabel *scoreLabel1;
 @property (weak, nonatomic) IBOutlet UIButton *restartGameButton;
 @property (weak, nonatomic) IBOutlet UIButton *twitterButton;
 @property (weak, nonatomic) IBOutlet UIButton *fbButton;

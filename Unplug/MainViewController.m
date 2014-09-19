@@ -33,7 +33,20 @@
 - (void)viewDidLoad
 {
     highScoreNumber = [[NSUserDefaults standardUserDefaults] integerForKey:@"HighScoreSaved"];
-    highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i", highScoreNumber];
+    
+    int highScoreSeconds = highScoreNumber % 60;
+    int highScoreMinutes = (highScoreNumber / 60);
+    int highScoreHours = highScoreNumber / 3600;
+    
+    if (highScoreNumber < 61) {
+        highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i seconds", highScoreNumber];
+    }
+    else if (highScoreNumber > 60 && highScoreNumber < 3600) {
+        highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i minutes, %i seconds", highScoreMinutes, highScoreSeconds];
+    }
+    else if (highScoreNumber > 3600) {
+        highScoreLabel.text = [NSString stringWithFormat:@"High Score: %i hours, %i minutes, %i seconds", highScoreHours, highScoreMinutes, highScoreSeconds];
+    }
 
     
     [super viewDidLoad];

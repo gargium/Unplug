@@ -339,7 +339,7 @@ int highScoreNumber;
         //shows the alert for the next time
         
         
-        //turn the boolean logic into an nsuser defaults thing -- reminder for next time. 
+        //turn the boolean logic into an nsuser defaults thing -- reminder for next time.
         showRateUsAlert = YES;
         
         

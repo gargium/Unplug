@@ -1,8 +1,19 @@
+VERSION 1.1 CHANGELOG**************************************************************************
+
 TODO LIST:
 - Implement a way for the system to remember to only display the intro slideshow on the first launch
+- Change the showAlert boolean into an NSUserDefaults thing so the Rate My App alert works properly
+- Add  easy, medium, hard game modes that alter sensitivity
+- This time make sure the app goes in the games section LOL
+- Have a second game mode for countdown - using a countdown timer.
+- Push notifications to get people to keep playing.
+- Add photo backgrounds instead of gradients. No longer is the flat look necessary.
+- Change icon to be more vibrant and neon-y. No clue what that means for now but I'll figure it out LOL.
 
 
 CHANGELOG:
 + Changed the default text that shows up when sharing on facebook or twitter.
 + Deleted the scoring mechanism -- it's redundant and not needed since the time lasted can be used as a scoring mechanism anyways.
-+ Changed the high score label to adapt to the amount of time that the user lasted. 
++ Changed the high score label to adapt to the amount of time that the user lasted.
+
+***********************************************************************************************
